@@ -1,0 +1,17 @@
+  <nav class="red" style="padding:0px 0px; position: fixed;">
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo">Cafeteria Konecta</a>
+  
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+        <i class="material-icons">menu</i>
+      </a>
+  
+      <ul class="right hide-on-med-and-down "  >
+        <li *ngIf="!isLogged"><a routerLink="/security/login">Login</a></li>
+        <li><a routerLink="/productos/ventas">Nosotros</a></li>
+        <li *ngIf="!isLogged" ><a routerLink="/">logout</a></li>
+        <!-- <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li> -->
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,76 @@
+<div class="container col s8">
+    <div class="row">
+      <nav>
+        <div class="nav-wrapper blue">
+          <div class="col s8">
+            <h3 class="brand-logo col s14">Please Register</h3>
+          </div>
+        </div>
+      </nav>
+  
+    </div>
+    <form [formGroup]="fgValidator"  class="col s14">
+      <div class="row">
+        <div class="input-field hoverable col s6">
+          <i class="material-icons prefix">contacts</i>
+          <input [(ngModel)]="firstName"  id="firstName" type="text" formControlName="firstName">
+          <label for="firstName">Name</label>
+          <div class="warning-validator" *ngIf="fgv['firstName'].errors && (fgv['firstName'].dirty || fgv['firstName'].touched)">
+
+            <strong *ngIf="fgv['firstName'].errors && fgv['firstName'].errors['required']">
+              El campo es requerido
+            </strong>
+            <strong *ngIf="fgv['firstName'].errors && fgv['firstName'].errors['minlength']">
+              Este campo deberia contener almenos {{nameMinLength}} caracteres.
+          </strong>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field hoverable col s6">
+          <i class="material-icons prefix">email</i>
+          <input [(ngModel)]="email"  id="email" type="email"  formControlName="email">
+          <label for="email">Email</label>
+          <div class="warning-validator" *ngIf="fgv['email'].errors && (fgv['email'].dirty || fgv['email'].touched)">
+
+            <strong *ngIf="fgv['email'].errors && fgv['email'].errors['required']">
+              El campo es requerido
+            </strong>
+            <strong *ngIf="fgv['email'].errors && fgv['email'].errors['minlength']">
+              Este campo deberia ser almenos de {{usernameMinLength}} caracteres.
+          </strong>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field hoverable col s6">
+          <i class="material-icons prefix">vpn_key</i>
+          <input [(ngModel)]="password"  id="password" type="password"  formControlName="password">
+          <label for="password">Password</label>
+          <div class="warning-validator" *ngIf="fgv['password'].errors && (fgv['password'].dirty || fgv['password'].touched)">
+
+            <strong *ngIf="fgv['password'].errors && fgv['password'].errors['required']">
+                El campo es requerido
+            </strong>
+            <strong *ngIf="fgv['password'].errors && fgv['password'].errors['minlength']">
+              Este campo deberia ser de almenos {{passwordMinLength}} caracteres.
+          </strong>
+          </div>
+
+
+        </div>
+          <!-- <div class="input-field hoverable col s6">
+            <i class="material-icons prefix">replay</i>
+            <input id="password2" type="password" class="validate">
+            <label for="password2">Retype Password</label>
+          </div> -->
+      </div>
+      <!-- <a class="waves-effect waves-light btn center hoverable"><i class="large material-icons right">done</i>register</a> -->
+      <div class="row">
+        <div class="input-field col s6">
+          <button (click)="CustomerRegisterFn()" class="waves-effect waves-light btn center hoverable" ><i class="large material-icons right">done</i>Register</button>
+        </div>
+      </div>
+    </form>
+  
+  </div>
